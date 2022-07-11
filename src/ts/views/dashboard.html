@@ -1,0 +1,38 @@
+<!--
+ Copyright (c) 2014, 2022, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+    <h1>Dashboard Content Area</h1>
+    <div>
+        <oj-table
+                id="table"
+                aria-label="Employee Table"
+                accessibility.row-header="id"
+                data="[[dataProvider]]"
+                selection-mode='{"row": "multiple", "column": "multiple"}'
+                dnd='{"reorder": {"columns": "enabled"}}'
+                scroll-policy="loadMoreOnScroll"
+                scroll-policy-options='{"fetchSize": 10}'
+                columns="{{columnArray}}"
+                    class="demo-table-container">
+        </oj-table>
+        <script type="text/html" id="emp_photo">
+            <td>
+                <oj-avatar
+                        role="img"
+                        src="[[$context.row.avatar]]"
+                        size="xs"
+                        :aria-label="[['Avatar of ' + $context.row.first_name + ' ' + $context.row.last_name]]"
+                        :title="[['Avatar of ' + $context.row.first_name + ' ' + $context.row.last_name]]"></oj-avatar>
+            </td>
+        </script>
+        <script type="text/html" id="name_renderer">
+            <td>
+                <a data-bind="text: $context.row.first_name,
+                              click: function (data, evt) {$parent.loadEmployeePage($context.row, evt)}"></a>
+            </td>
+        </script>
+    </div>
+</div>

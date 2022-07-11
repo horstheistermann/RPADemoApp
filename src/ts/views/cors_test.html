@@ -1,0 +1,23 @@
+<!--
+ Copyright (c) 2014, 2022, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+
+    <h1>CORS Test</h1>
+    <div>
+        To change the content of this section, you will make edits to the cors_test.html file located in the /ts/views
+        folder.
+    </div>
+    <div data-bind="visible: callingServer" style="margin-top: 20px;">
+        <oj-progress-bar
+                id="progressBar"
+                value="{{-1}}"></oj-progress-bar>
+        Calling server, please wait...
+    </div>
+    <div data-bind="visible: !callingServer()">
+        <span><oj-bind-text value="[[responseStatus]]"></oj-bind-text></span> <br/>
+        <span style="color:red;"><oj-bind-text value="[[errorMessage()]]"></oj-bind-text></span>
+    </div>
+</div>

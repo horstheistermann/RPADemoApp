@@ -1,0 +1,35 @@
+<div class="oj-hybrid-padding">
+    <h1>Employee Details</h1>
+    <div style="float:right;margin-bottom: 10px;">
+        <oj-button on-oj-action="[[onGoBack]]">Go Back To DashBoard Page</oj-button>
+    </div>
+    <oj-bind-if test="[[employeeData]]">
+        <div style="clear: both;margin-top:10px;"
+             class="oj-panel oj-panel-shadow-sm oj-sm-margin-4x demo-panel-customizations">
+            <div style="display:flex;flex-direction:row;">
+                <div style="padding:10px;flex-grow:0">
+                    <oj-avatar
+                            role="img"
+                            src="[[employeeData().avatar]]"
+                            size="xs"
+                            :aria-label="[['Avatar of ' + employeeData().first_name + ' ' + employeeData().last_name]]"
+                            :title="[['Avatar of ' + employeeData().first_name + ' ' + employeeData().last_name]]"></oj-avatar>
+                </div>
+                <div style="flex-grow:1;margin-left:20px;">
+                    <div>
+                        ID: <span><oj-bind-text value="[[employeeData().id]]"></oj-bind-text></span>
+                    </div>
+                    <div>
+                        Name: <span><oj-bind-text
+                            value="[[employeeData().first_name + ' ' + employeeData().last_name]] "></oj-bind-text></span>
+                    </div>
+                    <div>
+                        Email: <span><oj-bind-text
+                            value="[[employeeData().email]] "></oj-bind-text></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </oj-bind-if>
+</div>
