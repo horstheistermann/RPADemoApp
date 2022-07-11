@@ -5,7 +5,7 @@ ojet strip
 ojet restore
 
 # Build
-ojet Build
+ojet build
 
 # Launch UI
 ojet serve --server-port=9000
