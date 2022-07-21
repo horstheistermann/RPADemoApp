@@ -38,7 +38,7 @@ class IncidentsViewModel {
       {
         'headerText': 'Name',
         'field': 'asset.name',
-        'width': '42%',
+        'width': '30%',
         'sortEnabled': false,
         'default': false
       },
@@ -132,6 +132,10 @@ class IncidentsViewModel {
       });
     }
     return Promise.resolve(data);
+  }
+
+  onClickPrimaryAction = (event: any) => {
+    alert(`onClickPrimaryAction  actionId: ${event.detail.actionId}    asset id:${event.detail.asset.id}` ) ;
   }
 }
 
