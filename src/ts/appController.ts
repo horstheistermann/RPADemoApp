@@ -53,9 +53,10 @@ class RootViewModel {
     const navData = [
       {path: "", redirect: "dashboard"},
       {path: "dashboard", detail: {label: "Dashboard", iconClass: "oj-ux-ico-bar-chart"}},
-      {path: "incidents", detail: {label: "Incidents", iconClass: "oj-ux-ico-fire"}},
+      {path: "incidents", detail: {label: "Opaas Table", iconClass: "oj-ux-ico-fire"}},
       {path: "cors_test", detail: {label: "CORS Test", iconClass: "oj-ux-ico-contact-group"}},
       {path: "about", detail: {label: "About", iconClass: "oj-ux-ico-information-s"}},
+      {path: "sampletable", detail: {label: "Sample Table", iconClass: "oj-ux-ico-information-s"}},
       {path: "employee", detail: {label: "Employee", iconClass: "oj-ux-ico-information-s"}}
     ];
 
@@ -112,7 +113,7 @@ class RootViewModel {
 
     // Setup the navDataProvider with the routes, excluding the first redirected route.
     //this.navDataProvider = new ArrayDataProvider(navData.slice(1), {keyAttributes: "path"});
-    let tabRoutes = navData.slice(1,5);
+    let tabRoutes = navData.slice(1,6);
     this.navDataProvider = new ArrayDataProvider(tabRoutes, {keyAttributes: "path"});
 
     // drawer

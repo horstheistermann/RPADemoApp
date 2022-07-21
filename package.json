@@ -10,7 +10,8 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.1",
     "typescript": "4.5.4",
-    "underscore": "^1.10.2"
+    "underscore": "^1.10.2",
+    "opaas-table-view": "10.0.0-redwood-79"
   },
   "engines": {
     "node": ">=12.21.0"

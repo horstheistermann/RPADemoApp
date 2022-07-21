@@ -12,6 +12,55 @@
   },
 
   "libs": {
+    "opaas-table-view": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/opaas-table-view",
+      "debug": {
+        "src": "loader.js",
+        "path": "libs/opaas-table-view/loader.js",
+        "cdnPath": "opaas-table-view/loader"
+      },
+      "release": {
+        "src": "loader.js",
+        "path": "libs/opaas-table-view/loader.js",
+        "cdnPath": "opaas-table-view/loader"
+      }
+    },
+    "tableViewMsg": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/opaas-table-view/tableViewMsg",
+      "debug": {
+        "src": ["nls*/**"],
+        "path": "libs/tableViewMsg",
+        "cdnPath": "tableViewMsg"
+      },
+      "release": {
+        "src": [
+          "nls*/**"
+        ],
+        "path": "libs/tableViewMsg",
+        "cdnPath": "tableViewMsg"
+      }
+    },
+
+    "toolbarMsg": {
+      "cdn": "3rdparty",
+      "cwd": "node_modules/opaas-table-view/toolbarMsg",
+      "debug": {
+        "src": [
+          "nls*/**"
+        ],
+        "path": "libs/toolbarMsg",
+        "cdnPath": "toolbarMsg"
+      },
+      "release": {
+        "src": [
+          "nls*/**"
+        ],
+        "path": "libs/toolbarMsg",
+        "cdnPath": "toolbarMsg"
+      }
+    },
 
     "knockout": {
       "cdn": "3rdparty",

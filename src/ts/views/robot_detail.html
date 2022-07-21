@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<div style="padding: 20px;">
+    <h4>Robot Detail View</h4>
+   <p>This text below is coming from asset.detail which acts as the view model for this view</p>
+    Test Value: <label data-bind="text: detail.test"></label>
+    <div>
+        <oj-button  on-oj-action='[[detail.buttonAction]]' display='icons'>
+            <span slot="startIcon" class="oj-ux-ico-information"></span>
+            Button Action
+        </oj-button>
+    </div>
+</div>
