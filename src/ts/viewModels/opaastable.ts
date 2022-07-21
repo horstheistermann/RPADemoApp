@@ -6,9 +6,6 @@ import * as ko from "knockout";
 import * as robotDetailView from "text!../views/robot_detail.html";
 import {ojButtonEventMap} from "ojs/ojbutton";
 
-
-console.log(robotDetailView);
-
 interface HeaderData {
   headerText: string,
   width?: string,
@@ -24,7 +21,22 @@ interface Robot {
   type: string
 }
 
-class IncidentsViewModel {
+class AssetDetailViewModel {
+  test: string = 'Horst testing AssetDetailViewModel.test';
+  asset: any;
+
+  constructor(asset) {
+     this.asset = asset;
+  }
+
+  buttonAction = (event: ojButtonEventMap['ojAction']) => {
+    const data = event.currentTarget as HTMLElement;
+    alert('buttonAction clicked asset id:' + this.asset.id);
+    return true;
+  };
+}
+
+class OpaasTableViewModel {
   fetchSize: number = 10;
   assetName: string;
   assetNamePlural: string;
@@ -41,6 +53,12 @@ class IncidentsViewModel {
         'width': '30%',
         'sortEnabled': false,
         'default': false
+      },
+      {
+        'headerText': 'ID',
+        'field': 'asset.id',
+        'width': '10%',
+        'sortEnabled': true
       },
       {
         'headerText': 'Version',
@@ -90,7 +108,7 @@ class IncidentsViewModel {
     this.totalAssets(10);
     const data: any[] = [];
     for (let i = 0; i < 10; i++) {
-      const primaryActions =  [
+      const primaryActions = [
         {
           "actionName": "VIEW",
           "actionId": "view_menu_id",
@@ -109,24 +127,17 @@ class IncidentsViewModel {
       ];
 
       const assetId = '' + i;
-      const buttonAction = (event: ojButtonEventMap['ojAction']) => {
-        const data = event.currentTarget as HTMLElement;
-        alert('buttonAction clicked asset id:' + assetId);
-        return true;
-      };
-
       const asset = {
         id: assetId,
-        name: {value:'Robot' + i, title: 'Tooltip'},
+        name: {value: 'Robot' + i, title: 'Tooltip'},
         version: '1.0',
         type: "oracle",
         primaryActions,
-        detail: {
-          test: 'horst',
-          buttonAction
-        },
-        detailView: robotDetailView
+        detailView: robotDetailView,
+        detail: null
       };
+      asset.detail = new AssetDetailViewModel(asset);
+
       data.push({
         asset: asset
       });
@@ -135,8 +146,8 @@ class IncidentsViewModel {
   }
 
   onClickPrimaryAction = (event: any) => {
-    alert(`onClickPrimaryAction  actionId: ${event.detail.actionId}    asset id:${event.detail.asset.id}` ) ;
+    alert(`onClickPrimaryAction  actionId: ${event.detail.actionId}    asset id:${event.detail.asset.id}`);
   }
 }
 
-export = IncidentsViewModel;
+export = OpaasTableViewModel;
