@@ -9,7 +9,6 @@ import JQuery from "jquery";
 import * as KnockoutTemplateUtils from 'ojs/ojknockouttemplateutils';
 import {RouterDetail, RouterParameters} from "../RouterTypes";
 
-// PR template test
 class DashboardViewModel {
   private dataLoaded: boolean = false;
   private args: ModuleRouterAdapter.ViewModelParameters<RouterDetail, RouterParameters> = null;
